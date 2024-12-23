@@ -7,5 +7,7 @@ public abstract class Vehicle {
         this.licensePlate = licensePlate;
     }
 
-    public String getLicensePlate() { return licensePlate; }
+    public String getLicensePlate() {
+        return licensePlate;
+    }
 }
