@@ -149,36 +149,56 @@ public class Autopark {
      * @return An ArrayList of occupied ParkingSpot objects.
      */
     public ArrayList<ParkingSpot> getParkedVehicles() {
-        // get all occupied spots
         ArrayList<ParkingSpot> parkedVehicles = new ArrayList<>();
         for (ParkingSpot spot : carSpots) {
-            if (spot.isAvailable()) {
-                break;
+            if (!spot.isAvailable()) {
+                parkedVehicles.add(spot);
             }
-            parkedVehicles.add(spot);
         }
         for (ParkingSpot spot : electricCarSpots) {
-            if (spot.isAvailable()) {
-                break;
+            if (!spot.isAvailable()) {
+                parkedVehicles.add(spot);
             }
-            parkedVehicles.add(spot);
         }
         for (ParkingSpot spot : motorcycleSpots) {
-            if (spot.isAvailable()) {
-                break;
+            if (!spot.isAvailable()) {
+                parkedVehicles.add(spot);
             }
-            parkedVehicles.add(spot);
         }
 
         return parkedVehicles;
     }
 
     /**
-     * Initializes parking spots for a given type of vehicle.
-     * @param spots The array of parking spots to initialize.
-     * @param prefix The prefix for the parking spot IDs.
-     * @param type The type of vehicles for these parking spots.
+     * Retrieves a list of all currently available parking spots.
+     * @return An ArrayList of available ParkingSpot places.
      */
+    public ArrayList<String> getAvailableSpots(String type) {
+        ArrayList<String> availableSpots = new ArrayList<>();
+        for (ParkingSpot spot : carSpots) {
+            if (spot.isAvailable()) {
+                availableSpots.add(spot.getId());
+            }
+        }
+        for (ParkingSpot spot : electricCarSpots) {
+            if (spot.isAvailable()) {
+                availableSpots.add(spot.getId());
+            }
+        }
+        for (ParkingSpot spot : motorcycleSpots) {
+            if (spot.isAvailable()) {
+                availableSpots.add(spot.getId());
+            }
+        }
+        return availableSpots;
+    }
+
+        /**
+         * Utility function to Initialize parking spots for a given type of vehicle.
+         * @param spots The array of parking spots to initialize.
+         * @param prefix The prefix for the parking spot IDs.
+         * @param type The type of vehicles for these parking spots.
+         */
     private void initSpots(ParkingSpot[] spots, char prefix, String type) {
         // spot id's use zero indexing; e.g., P000 ,P199, E000, E009 etc.
 

@@ -1,7 +1,7 @@
 package main.java.parkingLotApp.vehicles;
 
 public abstract class Vehicle {
-    protected String licensePlate;
+    private String licensePlate;
 
     public Vehicle(String licensePlate) {
         this.licensePlate = licensePlate;
