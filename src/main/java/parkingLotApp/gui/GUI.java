@@ -2,14 +2,14 @@ package main.java.parkingLotApp.gui;
 
 import javax.swing.*;
 import java.awt.*;
-import main.java.parkingLotApp.parkingLot.*;
+import main.java.parkingLotApp.parking.*;
 
 public class GUI {
     private JFrame frame;
-    private ParkingLot parkingLot; // Use the correct class name
+    private Autopark parkingLot; // Use the correct class name
 
     public GUI() {
-        parkingLot = new ParkingLot(); // Correct initialization
+        parkingLot = new Autopark(); // Correct initialization
         frame = new JFrame("Parking Lot System");
         frame.setSize(500, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
