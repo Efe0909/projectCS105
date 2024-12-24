@@ -35,6 +35,14 @@ public class ParkingSpot {
         this.vehicle = vehicle; // Associate the vehicle with this spot
     }
 
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
     /**
      * Releases the parking spot, making it available for other vehicles.
      */

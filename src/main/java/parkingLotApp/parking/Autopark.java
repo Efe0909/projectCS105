@@ -28,11 +28,11 @@ public class Autopark {
 
         // Initialize spots for each type of vehicle
         initSpots(carSpots, 'P', "Car");
-        System.out.println("Car Spots are created.");
+        //System.out.println("Car Spots are created.");
         initSpots(electricCarSpots, 'E', "ElectricCar");
-        System.out.println("ElectricCar Spots are created.");
+       // System.out.println("ElectricCar Spots are created.");
         initSpots(motorcycleSpots, 'M', "Motorcycle");
-        System.out.println("Motorcycle Spots are created.");
+       // System.out.println("Motorcycle Spots are created.");
     }
 
     /**
