@@ -40,7 +40,7 @@ public class AppGui {
         homePanel.setBackground(new Color(255, 255, 255));
         homePanel.setLayout(null);
 
-        HomePage.crateParkButton(homePanel);
+        HomePage.crateParkButton(frame, homePanel);
         HomePage.createExitButton(homePanel);
         HomePage.createListParkedVehiclesButton(homePanel);
         HomePage.createShowAvailableSpotsButton(homePanel);
