@@ -5,7 +5,7 @@ import main.java.parkingLotApp.parking.*;
 import main.java.parkingLotApp.vehicles.*;
 
 
-public class Efe {
+public class test {
     public static void main(String[] args) {
         new AppGui();
 
