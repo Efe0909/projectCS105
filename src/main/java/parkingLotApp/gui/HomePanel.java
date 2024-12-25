@@ -44,7 +44,7 @@ public class HomePanel extends JPanel {
 
 
         JButton findVehicleButton = new JButton("Find a Vehicle's Parking Spot");
-        findVehicleButton.setBounds(400, 250, 180, 70);
+        findVehicleButton.setBounds(400, 250, 220, 70);
         findVehicleButton.addActionListener(e -> app.cardLayout.show(app.mainPanel, "FindVehicle"));
         this.add(findVehicleButton);
     }
