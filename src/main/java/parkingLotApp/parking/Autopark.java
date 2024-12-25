@@ -1,6 +1,7 @@
 
 package main.java.parkingLotApp.parking;
 
+import java.awt.event.ActionEvent;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
@@ -231,18 +232,18 @@ public class Autopark {
 
              case BySpot:
                  for (int i = 0; i < parkedVehicles.size(); i++) {
-                     for (int j = i + 1; j < parkedVehicles.size(); j++) {
-                        if (parkedVehicles.get(j).getVehiclePlate().compareTo(
-                                parkedVehicles.get(j+1).getVehiclePlate()) > 0) {
-                            // Swap
-                            ParkingSpot temp = parkedVehicles.get(j);
-                            parkedVehicles.set(j, parkedVehicles.get(j + 1));
-                            parkedVehicles.set(j + 1, temp);
-
-                        }
+                     for (int j = 0; j < parkedVehicles.size() - 1 - i; j++) { // Correct loop bounds
+                         if (parkedVehicles.get(j).getId().compareTo(
+                                 parkedVehicles.get(j + 1).getId()) > 0) {
+                             // Swap
+                             ParkingSpot temp = parkedVehicles.get(j);
+                             parkedVehicles.set(j, parkedVehicles.get(j + 1));
+                             parkedVehicles.set(j + 1, temp);
+                         }
                      }
                  }
                  return parkedVehicles;
+
 
              default:
                  throw new RuntimeException("Couldn't find specified sort type.");
@@ -304,6 +305,8 @@ public class Autopark {
 
         System.out.println(type + " spots initialized: " + spots.length);
     }
+
+
 }
 
 

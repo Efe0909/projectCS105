@@ -2,7 +2,8 @@ package main.java.parkingLotApp.gui;
 
 import main.java.parkingLotApp.parking.ParkingSpot;
 import main.java.parkingLotApp.utils.SortType;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
@@ -36,19 +37,28 @@ public class ListParkedVehiclesPanel extends JPanel {
         sortComboBox.setBounds(120, 270, 150, 30);
         this.add(sortComboBox);
 
+
+        sortComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Dynamically get the selected SortType
+                SortType sortType = SortType.fromIndex(sortComboBox.getSelectedIndex());
+                updateTable(sortType);
+            }
+        });
+
         JButton returnButton = app.createReturnHomeButton();
         returnButton.setBounds(420, 270, 130, 30);
         this.add(returnButton);
     }
 
-    public void updateTable() {
+    public void updateTable(SortType selectedSort) {
         tableModel.setRowCount(0); // Clear the table
-        SortType selectedSort = getSortTypeFromComboBox();
 
         ArrayList<ParkingSpot> parkedVehicles = app.autopark.getParkedVehicles(selectedSort);
         for (ParkingSpot spot : parkedVehicles) {
             tableModel.addRow(new Object[]{
-                    spot.getVehiclePlate().getClass().getSimpleName(),
+                    spot.getVehicle().getClass().getSimpleName(),
                     spot.getVehiclePlate(),
                     spot.getId()
             });
