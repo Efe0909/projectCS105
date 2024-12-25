@@ -31,7 +31,7 @@ public class ParkingLotApp extends JFrame {
         autopark = new Autopark();
 
         setTitle("Parking Lot Application");
-        setSize(700, 400);
+        setSize(640, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
