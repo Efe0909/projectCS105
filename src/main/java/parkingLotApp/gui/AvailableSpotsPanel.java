@@ -11,7 +11,6 @@ public class AvailableSpotsPanel extends JPanel {
     private final JLabel electricCarCountLabel;
     private final JLabel motorcycleCountLabel;
 
-    //NOT ! done
     public AvailableSpotsPanel(ParkingLotApp app) {
 
         this.app = app;
