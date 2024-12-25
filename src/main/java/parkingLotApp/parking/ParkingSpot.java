@@ -75,4 +75,7 @@ public class ParkingSpot {
         return vehicle.getLicensePlate(); // Return the license plate of the parked vehicle
     }
 
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
 }

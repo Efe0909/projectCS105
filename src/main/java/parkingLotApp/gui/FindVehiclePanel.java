@@ -51,20 +51,21 @@ public class FindVehiclePanel extends JPanel {
                         Pair<String, Integer> spotInfo = app.autopark.queryPlate(plate);
 
                         // Format and display the result
-                        statusLabel.setText("Vehicle found in " + spotInfo.getFirst() + " at spot index " + spotInfo.getSecond());
+                        statusLabel.setText("Vehicle found in spot: " +
+                            (spotInfo.getFirst().equals("carSpots") ? "P" :
+                            spotInfo.getFirst().equals("motorcycleSpots") ? "M" :
+                            spotInfo.getFirst().equals("electricCarSpots") ? "E" : "Invalid") + String.format("%03d", spotInfo.getSecond())
+                        );
                     } catch (RuntimeException ex) {
                         statusLabel.setText(ex.getMessage());
                     }
                 }
             });
-
         });
 
         JButton returnButton = app.createReturnHomeButton();
         returnButton.setBounds(200, 300, 150, 30);
         this.add(returnButton);
     }
-
-
 
 }
