@@ -35,13 +35,7 @@ public class ParkingSpot {
         this.vehicle = vehicle; // Associate the vehicle with this spot
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
 
     /**
      * Releases the parking spot, making it available for other vehicles.
@@ -80,4 +74,5 @@ public class ParkingSpot {
         }
         return vehicle.getLicensePlate(); // Return the license plate of the parked vehicle
     }
+
 }
